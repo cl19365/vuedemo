@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>data:数据对象</title>
+</head>
+<body>
+    <div id="app">
+        {{message}}
+        <h2>{{school.name}} {{school.mobile}} </h2>
+        <ul>
+            <li> {{campus[0]}} </li>
+        </ul>
+    </div>
+
+        <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script>
+    var app=new vue({
+        el:"#app",
+        data:{
+            message:"你好",
+            school:{
+                name:"eizo",
+                mobile:"14292193212"
+            },
+            campus:["北京","上海","广州"]
+        }
+    })
+</script>
+</body>
+</html>
