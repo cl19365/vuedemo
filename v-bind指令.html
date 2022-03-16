@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-bind指令</title>
+    <style>
+        .active{
+            border: 10px solid rgb(25, 209, 255);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <img v-bind:src="imgSrc_1" alt="" style="width: 200px;">
+        <br>
+        <!-- 简写 -->
+        <!--
+            "isActive?'active':''"
+            isActive如果为真，添加类名为active反之设为空字符串
+        -->
+        <img :src="imgSrc_1" alt="" style="width: 200px;" :title="imgTitle+'!'" :class="isActive?'active':''" @click="toggleActive()">
+        <br>
+
+        <!-- 
+            {active:isActive}
+            active这个类名是否生效取决于isActive是否为真
+         -->
+        <img :src="imgSrc_2" alt="" style="width: 200px;" :title="imgTitle+'!'" :class="{active:isActive}" @click="toggleActive()">
+    </div>
+
+
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                imgSrc_1: "image/0.png",
+                imgSrc_2: "image/1.png",
+                imgTitle: "图片",
+                isActive: false
+            },
+            methods: {
+                toggleActive: function () {
+                    this.isActive = !this.isActive;
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

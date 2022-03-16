@@ -32,6 +32,7 @@
         <h2 v-show="isShow">wula</h2>
         <div class="input-num">
             <button @click="subAge()" class="age">-</button>
+            <!-- v-show使用样式隐藏dom元素，建议需要频繁切换时使用 -->
             <span v-show="age>=18">{{age}}</span>
             <button @click="addAge()" class="age">+</button>
         </div>
@@ -43,8 +44,8 @@
         var app = new Vue({
             el: "#app",
             data: {
-                isShow: "true",
-                age: "17"
+                isShow: true,
+                age: 17
             },
             methods: {
                 changeIsShow: function () {

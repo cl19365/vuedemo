@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    background-image: url(../image/background_1_1.png);
+    background-size: 100%;
+}
+#f{
+    margin: 100px auto;
+}
+.title>p{
+    font-size: 60px;
+    text-align: center;
+    color: rgba(187, 187, 187, 0.822);
+}
+.input{
+    width: 400px;
+    height: 40px;
+    background-color: rgba(87, 87, 87, 0);
+    border-radius: 5px;
+    margin: 80px auto;
+    border: 1px solid #000;
+}
+.input>input{
+    border: 0;
+    outline: 0px;
+    width: 390px;
+    height: 40px;
+    padding-left:10px;
+    font-size: 24px;
+    border-radius: 5px;
+    background-color: rgba(87, 87, 87, 0.253);
+}
+.line{
+    border: 2px solid #000;
+}
