@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>天气查询</title>
+    <link rel="stylesheet" href="css/weatherSearch.css">
+</head>
+<body>
+    <div id="f">
+        <div class="top">
+            <div><p>天气查询</p></div>
+            <div>
+                <input type="text" name="" id="search" placeholder="请输入" @keyup.enter="searchWeather()" v-model="city">
+                <div @click="searchWeather()">search</div>
+            </div>
+            <div>
+               <span @click="clickSearch('北京')">北京</span>
+               <span @click="clickSearch('上海')">上海</span>
+               <span @click="clickSearch('广州')">广州</span>
+               <span @click="clickSearch('深圳')">深圳</span>
+            </div>
+        </div>
+        <div class="button">
+            <ul class="weatherList">
+                <li v-for="weather in weatherList">
+                    <div>{{weather.type}}</div>
+                    <div>{{weather.low}} ~ {{weather.high}}</div>
+                    <div>{{weather.date}}</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <script src="js/axios.min.js"></script>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="js/vue.js"></script>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/weatherSearch.js"></script>
+</body>
+</html>

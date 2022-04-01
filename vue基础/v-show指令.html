@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-show指令</title>
+</head>
+<style>
+    #app {
+        margin-left: 45%;
+    }
+
+    .age {
+        width: 60px;
+        height: 30px;
+        margin: 40px 20px;
+    }
+</style>
+
+<body>
+    <!-- 
+        v-show指令的作用是:根据真假切换元素的显示状态
+        原理是修改元素的display,实现显示隐藏
+        指令后面的内容,最终都会解析为布尔值
+        值为true元素显示,值为false元素隐藏
+
+     -->
+    <div id="app">
+        <button @click="changeIsShow()">切换显示</button>
+        <h2 v-show="isShow">wula</h2>
+        <div class="input-num">
+            <button @click="subAge()" class="age">-</button>
+            <!-- v-show使用样式隐藏dom元素，建议需要频繁切换时使用 -->
+            <span v-show="age>=18">{{age}}</span>
+            <button @click="addAge()" class="age">+</button>
+        </div>
+    </div>
+
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                isShow: true,
+                age: 17
+            },
+            methods: {
+                changeIsShow: function () {
+                    this.isShow = !this.isShow;//!this.isShow:将true转为false或将false转为true
+                },
+                addAge: function () {
+                    if (this.age > 100) {
+                        alert("end")
+                    } else {
+                        this.age++;
+                    }
+                },
+                subAge: function () {
+                    if (this.age <= 0) {
+                        alert("不能再小了")
+                    } else {
+                        this.age--;
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-for指令</title>
+</head>
+
+<body>
+    <div id="app">
+        <ul>
+            <!-- 
+                v-for指令的作用是:根据数据生成列表结构
+                数组经常和v-for结合使用
+             -->
+            <!-- address(遍历数组时用来存储值的对象|名称不限) in arr(进行遍历的数组) -->
+            <!-- (address(遍历数组时用来存储值的对象|名称不限),id(进行遍历的数组的索引位)) in arr(进行遍历的数组) -->
+            <li v-for="(address,id) in arr">
+                {{id+1}}地址：{{address}}
+            </li>
+            <!-- v-bind:title="stuName.name":鼠标移入当前元素时于鼠标右下方显示stuName对象的name属性 -->
+            <li v-for="stuName in studentName" v-bind:title="stuName.name">
+                {{stuName.name}}
+            </li>
+        </ul>
+        <button @click="add()">添加</button>
+        <button @click="remove()">移除</button>
+    </div>
+
+
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                arr: [
+                    "北京",
+                    "上海",
+                    "广州"
+                ],
+                studentName: [
+                    { name: "eizo", age: 54 },
+                    { name: "anno", age: 34 }
+
+                ]
+            },
+            methods: {
+                add: function () {
+                    this.studentName.push({ name: "ezio", age: "44" })
+                },
+                remove: function () {
+                    this.studentName.shift();//.shift()默认移除数组最左侧的元素
+
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

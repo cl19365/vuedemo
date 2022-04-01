@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>记事本</title>
+    <link rel="stylesheet" href="css/homepage.css">
+</head>
+<body>
+    <div id="f">
+        <div class="title">
+            <p>记事本</p>
+        </div>
+        <div class="input">
+            <input type="text" name="" id="" placeholder="请输入" v-model="inputValue" @keyup.enter="add()">
+        </div>
+        <div class="bottom">
+            <div class="d1">
+                <ul>
+                    <li v-for="(value,index) in list">
+                        <div class="view" @mouseover="changeBackground()" @mouseout="changeBackground()">
+                            <span class="index">{{index+1}}.</span>
+                            <label>{{value}}</label>
+                            <div class="destroy button" @click="remove(index)">删除</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="d2">
+                <div>共{{list.length}}条信息</div>
+                <div class="button" @click="clear()">清空信息</div>
+            </div>
+        </div>
+    </div>
+
+        <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+        <script src="js/vue.js"></script>
+        <script src="js/jquery-3.6.0.min.js"></script>
+        <script src="js/homepage.js"></script>
+</body>
+</html>

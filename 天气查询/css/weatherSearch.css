@@ -1,0 +1,78 @@
+*{
+    margin: 0;
+    padding: 0;
+    color: rgb(192, 192, 192);
+}
+html{
+    background-image: url(../image/background_1_1.png);
+    background-size: 100%;
+}
+/* --------------------------------------------------------------------------- */
+.top{
+    width: 65%;
+    height: 150px;
+    margin: 5% auto;
+    border-radius: 5px;
+    background-color: rgba(173, 173, 173, 0.37);
+}
+.top>div:first-child{
+    height: 80px;
+}
+.top>div:first-child>p{
+    text-align: center;
+    line-height: 70px;
+    font-size: 20px;
+}
+.top>div:nth-child(2){
+    height: 40px;
+    width: 600px;
+    margin: auto;
+}
+.top>div:nth-child(2)>*{
+    float: left;
+}
+#search{
+    width: 472px;
+    height: 38px;
+    padding-left: 4px;
+    font-size: 18px;
+    border: 1px solid rgba(92, 92, 92, 0.548);
+    background-color: rgba(99, 99, 99, 0.377);
+    border-radius:5px 0 0 5px ;
+}
+#search+div{
+    width: 20%;
+    height: 100%;
+    cursor: pointer;
+    background-color: rgba(58, 58, 58, 0.589);
+    border-radius:0 5px 5px 0;
+    text-align: center;
+    line-height: 40px;
+}
+.top>div:last-child{
+    width: 600px;
+    margin: auto;
+}
+.top>div:last-child>span{
+    margin-right: 15px;
+    cursor: pointer;
+}
+/* -------------------------------------------------------------------------------- */
+.button{
+    margin-top: 50px;
+}
+.button ul{
+    list-style: none;
+    text-align: center;
+    margin: auto;
+}
+.button ul>li{
+    width: 18%;
+    float: left;
+    background-color: rgba(58, 58, 58, 0.589);
+    border-radius: 5px;
+    margin:1%;
+}
+.weatherList div{
+    margin: 7px;
+}
