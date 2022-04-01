@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>计数器</title>
+    <style>
+        #app {
+            margin-left: 45%;
+        }
+
+        button {
+            width: 60px;
+            height: 30px;
+            margin: 40px 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="input-num">
+            <button @click="sub()">-</button>
+            <span>{{num}}</span>
+            <button @click="add()">+</button>
+        </div>
+    </div>
+
+
+
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                num: 1
+            },
+            methods: {
+                add: function () {
+                    if (this.num > 9) {
+                        alert("以增加至最大值");
+                    } else {
+                        this.num++;
+                    }
+                },
+                sub: function () {
+                    if (this.num < 1) {
+                        alert("以减至小最值");
+                    } else {
+                        this.num--;
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

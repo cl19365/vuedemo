@@ -15,23 +15,62 @@ html{
     color: rgba(187, 187, 187, 0.822);
 }
 .input{
-    width: 400px;
-    height: 40px;
-    background-color: rgba(87, 87, 87, 0);
-    border-radius: 5px;
-    margin: 80px auto;
-    border: 1px solid #000;
+    width: 500px;
+    margin:auto;
+    margin-top: 80px;
 }
 .input>input{
-    border: 0;
-    outline: 0px;
-    width: 390px;
+    width: 486px;
     height: 40px;
+    color: rgb(180, 180, 180);
     padding-left:10px;
     font-size: 24px;
-    border-radius: 5px;
-    background-color: rgba(87, 87, 87, 0.253);
+    border-radius: 5px 5px 0 0;
+    background-color: rgba(87, 87, 87, 0.356);
+    
 }
-.line{
-    border: 2px solid #000;
+.bottom{
+    width: 498px;
+    margin:  auto;
+    border: 1px solid rgba(87, 87, 87, 0.356);
+    background-color: rgba(87, 87, 87, 0.356);
+    border-radius: 0 0 5px 5px;
+}
+.bottom li{
+    list-style: none;
+    color: rgb(180, 180, 180);
+    font-size: 20px;
+    line-height: 50px;
+}
+.bottom .view{
+    height: 50px;
+    position: relative;
+    margin-bottom: 2px;
+    margin-left: 2%;
+}
+#f .button{
+    position: absolute;
+    right: 2px;
+    top: 50%;
+    background-color: rgba(255, 255, 255, 0);
+    cursor:pointer;
+    color: rgb(201, 11, 11);
+    font-size: 16px;
+    line-height: 0px;
+}
+.bottom>.d1 .destroy{
+    display: none;
+}
+.d2{
+    height: 50px;
+    position: relative;
+}
+.d2>div{
+    color: rgb(180, 180, 180);
+    line-height: 50px;
+    position: absolute;
+    left: 2%;
+}
+#f .d2 .button{
+    left: 85%;
 }

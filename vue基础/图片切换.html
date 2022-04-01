@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片切换</title>
+    <style>
+        #mask {
+            margin: 100px 40%;
+            width: 300px;
+            position: relative;
+        }
+
+        #mask>button {
+            position: absolute;
+            top: 20%;
+        }
+
+        #mask>button:last-child {
+            right: 0;
+        }
+
+        button {
+            width: 60px;
+            height: 30px;
+            margin: 40px 0;
+        }
+
+        img {
+            width: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="mask">
+                <button @click="sub()" v-show="index>0"><</button>
+                <img v-bind:src="imgArr[index]" alt="">
+                <button @click="add()" v-show="index<imgArr.length-1">></button>
+    </div>
+
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: "#mask",
+            data: {
+                imgArr: [
+                    "image/0.png",
+                    "image/1.png",
+                    "image/2.png",
+                    "image/3.png",
+                    "image/4.png",
+                    "image/5.png"
+                ],
+                index: 0
+            },
+            methods: {
+                add: function () {
+                    this.index++;
+                }
+            },
+            sub: function () {
+                this.index--;
+            }
+        })
+    </script>
+</body>
+
+</html>

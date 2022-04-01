@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>音乐播放器</title>
+    <link rel="stylesheet" href="css/css.css">
+</head>
+
+<body>
+    <div id="f">
+        <div>
+            <div class="top">
+                <div>
+                    <input type="text" name="" id="input" v-model="search" @keyup.enter="searchMusic()">
+                    <img src="image/搜索 .png" alt="" @click="searchMusic()">
+                </div>
+            </div>
+            <div class="body">
+                <div class="left">
+                    <ul>
+                        <li v-for="musicList in musicList">
+                            <img src="image/播放.png" alt="" title="点击播放" @click="playMusic(musicList.id)">
+                            <span>{{musicList.name}}</span>
+                            <img src="image/视频.png" alt="" title="点击播放视频" @click="getMv(musicList.mvid)" v-show="musicList.mvid!=0">
+                        </li>
+                    </ul>
+                </div>
+                <div class="middle" :class="{playing:isPlaying}">
+                    <img src="image/player_bar.png" class="img img1 " alt="">
+                    <img src="image/disc.png" class="img img2 autoRotate" alt="">
+                    <img :src="imgURL" class="img img3 autoRotate" alt="">
+                </div>
+                <div class="right">
+                    <h4>热门留言</h4>
+                    <ul>
+                        <li v-for="value in hotComments">
+                            <div>
+                            <img :src="value.user.avatarUrl" alt="">
+                        </div>
+                            <div>
+                                <div>{{value.user.nickname}}</div>
+                                <br>
+                                <div>{{value.content}}</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="button">
+            <audio :src="musicURL" controls autoplay loop @play="play()" @pause="pause()"></audio>
+        </div>
+        <div class="mv" v-show="isShow">
+            <video :src="mvUrl" controls></video>
+            <div @click="hidden()"></div>
+        </div>
+    </div>
+
+    <script src="js/axios.min.js"></script>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/vue.js"></script>
+    <script src="js/js.js"></script>
+</body>
+
+</html>
